@@ -11,18 +11,13 @@
     "action": {
         "default_popup": "popup.html"
     },
+    "host_permissions": ["<all_urls>"],
     "externally_connectable": {
-        "matches": [
-            "https://*.example.com/*",
-            "http://127.0.0.1:5500/text.html",
-            "http://127.0.0.1:5500/*",
-            "127.0.0.1:5500/text.html"
-        ]
+        "matches": ["http://127.0.0.1:5500/text.html", "http://127.0.0.1:5500/*", "127.0.0.1:5500/text.html"]
     },
     "background": {
         "service_worker": "service-worker.js",
         "type": "module"
     },
-
-    "permissions": ["tabGroups"]
+    "permissions": ["tabGroups", "webNavigation", "scripting", "activeTab", "tabs"]
 }
