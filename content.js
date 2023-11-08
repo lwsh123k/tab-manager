@@ -1,5 +1,8 @@
 // content_script.js
+// 用于读取和修改页面中的内容, 如: 添加或者去除某个element
+// 每当页面匹配上了就会加载
 
+// not used
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     if (message.action === "simulateFileUpload") {
         const fileInput = document.getElementById("privateKeyFile");
