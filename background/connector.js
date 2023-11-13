@@ -20,7 +20,7 @@ function connectToSocket() {
     socket.on("open a new tab", (data) => {
         chrome.tabs.create({ url: data.url }, function (newTab) {
             // 当标签页加载完成时触发
-            chrome.tabs.onUpdated.addListener(async function (tabId, changeInfo, tab) {
+            chrome.tabs.onUpdated.addListener(async function onUpdatedListener(tabId, changeInfo, tab) {
                 if (tabId === newTab.id && changeInfo.status === "complete") {
                     await openAndSimulate(tab, data.number);
                     // 移除事件监听器，因为它只需要在加载完成后执行一次
